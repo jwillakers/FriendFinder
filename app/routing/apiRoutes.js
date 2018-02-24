@@ -29,6 +29,7 @@ module.exports = function(app) {
 
 
   app.post("/api/friends", function(req, res) {
+  	var totalScore = 0;
   //takes this match & loops through the other possible matches
 		var greatMatch = {
 			name: "",
@@ -38,7 +39,7 @@ module.exports = function(app) {
 		var greatMatchData = req.body;
 		var greatMatchName = greatMatchData.name;
 		var greatMatchImage = greatMatchData.profilePic;
-		var greatMatchScore = greatMatchData.scores;
+		var greatMatchScore = greatMatchData.score;
 		// console.log(greatMatchData)
 
 //calculates data/difference in score to other users
@@ -47,7 +48,7 @@ module.exports = function(app) {
 //loop through the friends data array of objects to get each friends scores
 		for ( var i = 0; i < friends.length; i++ ) {
 			// console.log(friends[i].name);
-			var totalScore = 0;
+			
 			console.log(friends[i])
 //loop through that friends questions and putsh that to the total difference variable set above
 			for ( var j = 0; j < friends[i].score.length; j++ ){
@@ -71,6 +72,7 @@ module.exports = function(app) {
 		
 		friends.push(greatMatchData);
  
+ console.log(greatMatch.name)
 		res.json(greatMatch);
 		greatMatch = {name: "", photo: "", matchDifference: 1000} 
   });
