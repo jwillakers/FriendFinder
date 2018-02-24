@@ -10,9 +10,9 @@ module.exports = function(app) {
 		res.sendFile(path.join(__dirname + '/../public/css/style.css'));
 	});
 
-	app.get('/img/:name', function (req, res) {
-		res.sendFile(path.join(__dirname + '/../public/img/'));
-	});
+	// app.get('/img/:name', function (req, res) {
+	// 	res.sendFile(path.join(__dirname + '/../public/data/'));
+	// });
     
     // HTML GET requests for when user visits home/survey html page
 	app.get('/home', function(req, res){

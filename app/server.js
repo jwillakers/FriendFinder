@@ -12,7 +12,7 @@ var app = express ();
 
 // Sets the Exprss app to handle Body Parser Middleware
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
@@ -21,8 +21,8 @@ app.use(express.static(path.join(__dirname, 'app/public')));
 
 
 // Set Routing for app to know what directory to go to when user requests info
-require('./app/routing/api-routes.js')(app); 
-require('./app/routing/html-routes.js')(app);
+require('./routing/apiRoutes.js')(app); 
+require('./routing/htmlRoutes.js')(app);
 
 
 // Starts server to listen for functions on port 3000

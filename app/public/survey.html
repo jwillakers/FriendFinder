@@ -1,102 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <head>
-    <meta charset="UTF-8">
-    <title>Friend Finder</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-      <script src="https://code.jquery.com/jquery.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<html>
 
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-      <link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <!-- materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <!-- materialize icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+       <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <title>Friend Finder - Survey</title>
 </head>
 
 <body>
-<div class="col-xs-12">
-    <div class="row">
-
-<!-- Link back to homepage. -->
-        <p><a href="/">Home</a></p>
-        <h1>Friend Finder Survey Questions</h1>
-        <hr>
- 
-  <!--Basic questionnaire-->
-            <h2>About You</h2>
-            <div class="form-group">
-                <label for="userName">Your Name</label>
-                <input type="text" class="form-control" id="userName" placeholder="Your name here">
+    <div class='container'>
+        <div class='card-panel yellow darken-1 col s12 center-align'>
+            <h4><strong>Survey Questions</strong></h4>
+            <div class='card-panel left-align white'>
+                <h5><strong>About You</strong></h5>
+                <br>
+                <input id="name" type="text" class="validate" required>
+                <label class='active' for="name">Name (required)</label>
+                <input id="photo" type="text" class="validate" required>
+                <label class='active' for="name">Link to Photo Image (required)</label>
+                <h5><strong>Question 1</strong></h5>
+                <p>I enjoy meeting new people.</p>
+                <select data-placeholder="" class="browser-default" id="q1">
+                    <option value="">Choose an option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <h5><strong>Question 2</strong></h5>
+                <p>I like helping people.</p>
+                <select data-placeholder="" class="browser-default" id="q2">
+                    <option value="">Choose an option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <h5><strong>Question 3</strong></h5>
+                <p>I sometimes make mistakes.</p>
+                <select data-placeholder="" class="browser-default" id="q3">
+                    <option value="">Choose an option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <h5><strong>Question 4</strong></h5>
+                <p>I am easily disappointed.</p>
+                <select data-placeholder="" class="browser-default" id="q4">
+                    <option value="">Choose an option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <h5><strong>Question 5</strong></h5>
+                <p>I enjoy repairing things.</p>
+                <select data-placeholder="" class="browser-default" id="q5">
+                    <option value="">Choose an option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <h5><strong>Question 6</strong></h5>
+                <p>I try out new activities.</p>
+                <select data-placeholder="" class="browser-default" id="q6">
+                    <option value="">Choose an Option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <h5><strong>Question 7</strong></h5>
+                <p> believe that everything happens for a reason.</p>
+                <select data-placeholder="" class="browser-default" id="q7">
+                    <option value="">Choose an option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <h5><strong>Question 8</strong></h5>
+                <p>I am nervous before big events.</p>
+                <select data-placeholder="" class="browser-default" id="q8">
+                    <option value="">Choose an option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <h5><strong>Question 9</strong></h5>
+                <p>I am a pet person.</p>
+                <select data-placeholder="" class="browser-default" id="q9">
+                    <option value="">Choose an option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <h5><strong>Question 10</strong></h5>
+                <p>I am modest about what I have achieved.</p>
+                <select data-placeholder="" class="browser-default" id="q10">
+                    <option value="">Choose an option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <br>
+                <!-- Materialize Modal Trigger/Submit Button -->
+                <button type ="submit" data-target="modal1" class="waves-effect waves-light btn modal-trigger cyan lighten-1" id="submitBtn">Submit</button>
             </div>
-            <div class="form-group">
-                <label for="imageLink">Your Photo</label>
-                <input type="url" class="form-control" id="imageLink" placeholder="http://flickr.com/image.png">
-            </div>
-            <hr>
-
-<!-- Questions will be inserted here. -->
-            <h2>Personality Test</h2>
-            <div id="questions"></div>
-            <button type="submit" class="btn btn-primary" id="submit">Submit</button>
-        </form>
-        <hr>
-
-<!--Links to data API and GitHub-->
-        <p>
-            <span><a href="/api/friends">API Friend List</a> | </span>
-            <span><a href="https://github.com/jwillakers/FriendFinder">GitHub Repository</a></span>
-        </p>
-
-<!-- Error Modal -->
-    <!-- Modal for displaying the messages -->
-<div class="modal fade" id="messageModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            ...
-
-            <div class="modal-body">
-                <!-- The messages container -->
-                <div id="errors"></div>
-            </div>
-
-            ...
         </div>
-    </div>
-</div>
-
-
-        <div id="errorModal" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg">
-
-<!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Please include your name and a link to a photo of you.</h4>
-                    </div>
-                </div>
-            </div>
-
+        <div class='col s4'>
+            <p><a href='/api/friends'>API Friends List</a> | <a href=https://github.com/jwillakers/FriendFinder target='_blank'>GitHub Repo</a></p>
         </div>
-    </div>
-    <!-- Result Modal -->
-    <div id="resultModal" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg">
 
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Your best match!</h4>
-                </div>
-                <div class="modal-body" id="modalContent"></div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
+        <!-- Materialize Modal Structure -->
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <h4>Meet Your New BFF</h4>
+            <h5 id="matchName"></h5>
+            <img id="matchPic" src="" alt="No Image" width = 250px>
+          </div>
+        <div class="modal-footer">
+          <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Done</a>
         </div>
+      </div>
+
     </div>
-</div>
+
+<!-- Grabs information and sends it to server -->
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#submitBtn").on("click", function() {
+        //form validation
+        function validateForm() {
+            var isValid = true;
+            $('.validate').each(function() {
+                if ($(this).val() === ''){
+                    isValid = false;
+                }
+            });
+            $('.browser-default').each(function() {
+                if ($(this).val() === ""){
+                    isValid = false;
+                }
+            });
+            return isValid;
+        }
+        //if everything is filled
+        if (validateForm() == true) {
+            //creates a new friend from the values submitted
+            var newFriend = {
+                name: $('#name').val().trim(),
+                profilePic: $('#photo').val().trim(),
+                scores: [
+                    $('#q1').val(),
+                    $('#q2').val(),
+                    $('#q3').val(),
+                    $('#q4').val(),
+                    $('#q5').val(),
+                    $('#q6').val(),
+                    $('#q7').val(),
+                    $('#q8').val(),
+                    $('#q9').val(),
+                    $('#q10').val(),
+                ]
+            };
+            //Grabs current URL of website
+            var currentURL = window.location.origin;
+            //AJAX posts the data to friends API.
+            $.post(currentURL + "/api/friends", newFriend, function(data) {
+                //Grab the result from the AJAX post so that the best match's name and photo are displayed.
+                $("#matchName").text(data.name);
+                $("#matchPic").attr("src", data.photo);
+            });
+            // Show the modal with the best match
+                $('.modal').modal();
+            //clear form after submission
+            $('#name').val("");
+            $('#photo').val("");
+            $('#q1').val("");
+            $('#q2').val("");
+            $('#q3').val("");
+            $('#q4').val("");
+            $('#q5').val("");
+            $('#q6').val("");
+            $('#q7').val("");
+            $('#q8').val("");
+            $('#q9').val("");
+            $('#q10').val("");
+        } else {
+            alert("Please fill out ALL fields before submitting survey!")
+        }
+        // return false;
+    });
+});
+</script>
 </body>
+
 </html>

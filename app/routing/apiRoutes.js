@@ -10,8 +10,7 @@
 // ===============================================================================
 
 var friends = require("../data/friends");
-// var friendData = require("../data/friendData");
-var path = require("path");
+
 
 
 // ===============================================================================
@@ -28,9 +27,6 @@ module.exports = function(app) {
     res.json(friends);
   });
 
-  //  app.get("/api/friendData", function(req, res) {
-  //   res.json(friendData);
-  // });
 
   app.post("/api/friends", function(req, res) {
   //takes this match & loops through the other possible matches
@@ -40,39 +36,43 @@ module.exports = function(app) {
 			matchDifference: 1000
 		};
 		var greatMatchData = req.body;
-		var greatMatchName = greatMatch.name;
-		var greatMatchImage = greatMatch.image;
-		var greatMatchScore = greatMatch.score;
+		var greatMatchName = greatMatchData.name;
+		var greatMatchImage = greatMatchData.profilePic;
+		var greatMatchScore = greatMatchData.scores;
+		// console.log(greatMatchData)
 
 //calculates data/difference in score to other users
-		var totalScore = 0;
+		// var totalScore = 0;
 
 //loop through the friends data array of objects to get each friends scores
 		for ( var i = 0; i < friends.length; i++ ) {
-			console.log(friends[i].name);
-			totalScore = 0;
-
-//loop through that friends score and the users score and calculate the 
-// absolute difference between the two and push that to the total difference variable set above
-			for ( var j = 0; j < 10; j++ ){
+			// console.log(friends[i].name);
+			var totalScore = 0;
+			console.log(friends[i])
+//loop through that friends questions and putsh that to the total difference variable set above
+			for ( var j = 0; j < friends[i].score.length; j++ ){
+				console.log(greatMatchScore[j]);
+				console.log(friends[i].score[j]);
 
 // We calculate the difference between the scores and sum them into the totalDifference
 				totalScore += Math.abs(parseInt(greatMatchScore[j]) - parseInt(friends[i].score[j]));
 
 // If the sum of differences is less then the differences of the current "best match"
 			}
-
+			console.log(friends[i].name, totalScore)
+			console.log("-------------")
 			if (totalScore <= greatMatch.matchDifference) {
 				// Reset the bestMatch to be the new friend. 
 				greatMatch.name = friends[i].name;
 				greatMatch.photo = friends[i].photo;
-				greatMatch.matchDifference = totalDifference;
+				greatMatch.matchDifference = totalScore;
 			}
 		}
 		
-		friends.push(usrData);
+		friends.push(greatMatchData);
  
-		res.json(greatMatch); 
+		res.json(greatMatch);
+		greatMatch = {name: "", photo: "", matchDifference: 1000} 
   });
 
 };
